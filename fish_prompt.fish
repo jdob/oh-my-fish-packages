@@ -14,12 +14,17 @@ function fish_prompt
   set -l normal (set_color normal)
 
   set -l fish "⋊>"
+  set -l mac "⌘"
+  set -l yinyang "☯"
+  set -l smile "☺︎"
+  set -l leader $fish
+
   set -l last_status $status
 
   if test $last_status = 0
-    set prompt "$green$fish$normal "
+    set prompt "$green$leader$normal "
   else
-    set prompt "$red$fish$normal "
+    set prompt "$red$leader$normal "
   end
 
   echo -n -s $prompt
