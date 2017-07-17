@@ -9,6 +9,8 @@ function _is_git_dirty
 end
 
 function fish_prompt
+  set fish_color_command (set_color brblue)
+
   set -l red (set_color red)
   set -l green (set_color green)
   set -l normal (set_color normal)
