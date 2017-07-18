@@ -9,6 +9,8 @@ function _is_git_dirty
 end
 
 function fish_right_prompt
+
+  # Colors
   set -l blue (set_color blue)
   set -l cyan (set_color cyan)
   set -l yellow (set_color yellow)
@@ -31,8 +33,16 @@ function fish_right_prompt
       set git_info "$blue$git_info"
     end
 
-    set git_info "$cyan($git_info$cyan)$normal "
+    set git_info "$cyan($git_info$cyan)$normal"
   end
 
-  echo -n -s $git_info $directory_info
+  # Virtual Environment Information
+  if set -q VIRTUAL_ENV
+    set venv_info (basename "$VIRTUAL_ENV")
+    set venv_info "$cyan($blue$venv_info$cyan)$normal"
+  else
+    set venv_info ""
+  end
+
+  echo -n -s "$venv_info $git_info $directory_info"
 end
