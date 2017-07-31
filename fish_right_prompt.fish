@@ -61,7 +61,7 @@ function fish_right_prompt
   end
 
   set -l top   "$border$bullet$line$venv_info$border$line$git_info$border$line$last_status$border$rt_border"
-  set -l bottom "$border$bullet$rb_border"
+  set -l bottom "$border$bullet$rb_border$normal"
 
   echo -s -n $bottom
 
