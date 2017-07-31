@@ -99,17 +99,18 @@ function fish_prompt
 
   set -l l_top    "$border$tl_border$bl$directory_info$border]$line$bullet"
   set -l l_bottom "$border$bl_border$line$bullet$normal "
-  
+  set -l r_top   "$border$bullet$line$venv_info$border$line$git_info$border$line$last_status$border$rt_border"
+
   # set -l l_top    "$border$bullet$line$bl$directory_info$border]$line$bullet"
-  # set -l l_bottom "$border$bullet$line$arrow"
+  # set -l l_bottom "$border$bullet$line$arrow "
+  # set -l r_top   "$border$bullet$line$venv_info$border$line$git_info$border$line$last_status$border$line$bullet"
 
-  set -l r_top   "$border$bullet$line$venv_info$border$line$git_info$border$line$last_status$border$line$bullet"
-  set -l r_bottom "$border$bullet$rb_border"
-
+  # Padding
   set -l left_length (_visual_length $l_top)
   set -l right_length (_visual_length $r_top)
   set -l spaces (math "$COLUMNS - $left_length - $right_length")
 
+  # Background coloring -- screw with this later
   # set -l bg_color 666666
   # set_color -b $bg_color
 
@@ -117,6 +118,6 @@ function fish_prompt
   printf "%-"$spaces"s" " "
   echo -s $r_top
 
-  echo -s -n "$l_bottom "
+  echo -s -n $l_bottom
 end
 
