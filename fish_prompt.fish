@@ -45,13 +45,7 @@ function fish_prompt
   set -l blue (set_color blue)
   set -l magenta (set_color magenta)
 
-  # Leader Images
-  set -l fish "⋊>"
-  set -l mac "⌘"
-  set -l yinyang "☯"
-  set -l smile "☺︎"
-  set -l arrow "➤"
-
+  # Widgets
   set -l line "─"
   set -l bullet "•"
   set -l tl_border "╭─"
@@ -59,6 +53,13 @@ function fish_prompt
   set -l rt_border "─╮"
   set -l rb_border "─╯"
   set -l bl "["
+
+  # Random Unused Widgets
+  set -l fish "⋊>"
+  set -l mac "⌘"
+  set -l yinyang "☯"
+  set -l smile "☺︎"
+  set -l arrow "➤"
 
   # Directory
   set -g fish_prompt_pwd_dir_length 3
