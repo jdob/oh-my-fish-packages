@@ -73,17 +73,17 @@ function fish_prompt
   end
 
   # Git Information
-  set -l git_ok "✔"
-  set -l git_dirty "✘"
+  set -l git_ok "$green✔"
+  set -l git_dirty "$red✘"
 
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
     set git_info "$git_branch"
 
     if [ (_is_git_dirty) ]
-      set git_info "$yellow$git_info $git_dirty"
+      set git_info "$cyan$git_info $git_dirty"
     else
-      set git_info "$green$git_info $git_ok"
+      set git_info "$cyan$git_info $git_ok"
     end
 
     set git_info "$border$bl$git_info$border]$normal"
