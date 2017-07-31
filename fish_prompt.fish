@@ -77,6 +77,7 @@ function fish_prompt
   set -l git_ok "$green✔"
   set -l git_dirty "$red✘"
 
+  set git_info "$border$bl]"
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
     set git_info "$git_branch"
