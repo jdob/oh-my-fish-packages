@@ -97,8 +97,11 @@ function fish_prompt
     set venv_info "[]"
   end
 
-  set -l l_top    "$border$bullet$line$bl$directory_info$border]$line$bullet"
+  set -l l_top    "$border$tl_border$bl$directory_info$border]$line$bullet"
   set -l l_bottom "$border$bl_border$line$bullet$normal "
+  
+  # set -l l_top    "$border$bullet$line$bl$directory_info$border]$line$bullet"
+  # set -l l_bottom "$border$bullet$line$arrow"
 
   set -l r_top   "$border$bullet$line$venv_info$border$line$git_info$border$line$last_status$border$line$bullet"
   set -l r_bottom "$border$bullet$rb_border"
@@ -114,6 +117,6 @@ function fish_prompt
   printf "%-"$spaces"s" " "
   echo -s $r_top
 
-  echo -s -n "$bullet$line$arrow "
+  echo -s -n "$l_bottom "
 end
 
